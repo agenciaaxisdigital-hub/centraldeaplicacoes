@@ -181,7 +181,7 @@ function getGreeting() {
 
 /* ─── main component ─────────────────────────────────────────────── */
 export default function Home() {
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
 
   const dateStr = new Date().toLocaleDateString("pt-BR", {
     weekday: "long",
