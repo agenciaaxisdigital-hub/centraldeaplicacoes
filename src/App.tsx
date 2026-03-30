@@ -3,6 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "./pages/Home";
 import VersionMonitor from "./components/VersionMonitor";
+import InstallPWA from "./components/InstallPWA";
 import { useOfflineSync } from "./hooks/useOfflineSync";
 
 function GlobalOfflineSync() {
@@ -13,6 +14,7 @@ function GlobalOfflineSync() {
 const App = () => (
   <TooltipProvider>
     <GlobalOfflineSync />
+    <InstallPWA />
     <VersionMonitor />
     <Toaster />
     <BrowserRouter>
