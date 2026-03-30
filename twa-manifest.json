@@ -1,0 +1,16 @@
+﻿{
+  "packageId": "br.com.sarelli.central",
+  "host": "central.sarelli.com.br",
+  "name": "Central de Aplicações Sarelli",
+  "launcherName": "Central",
+  "themeColor": "#ec4899",
+  "navigationColor": "#070510",
+  "backgroundColor": "#070510",
+  "enableNotifications": true,
+  "startUrl": "/",
+  "iconUrl": "https://central.sarelli.com.br/icon-512.png",
+  "maskableIconUrl": "https://central.sarelli.com.br/icon-512.png",
+  "appVersionName": "1.0.0",
+  "appVersionCode": 1,
+  "fallbackType": "customtabs"
+}

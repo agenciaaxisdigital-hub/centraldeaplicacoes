@@ -98,6 +98,17 @@ const apps = [
     url: "https://www.deputadasarelli.com.br",
     xp: 1000,
   },
+  {
+    id: "sindspag",
+    title: "SINDSPAG",
+    desc: "Plataforma de Gestão Integrada",
+    badge: "Sindicato",
+    Icon: Zap,
+    gradient: "from-orange-500 to-amber-600",
+    glowColor: "hsl(35, 96%, 55%)",
+    url: "https://sindspag.deputadasarelli.com.br/",
+    xp: 800,
+  },
 ] as const;
 
 type App = (typeof apps)[number];

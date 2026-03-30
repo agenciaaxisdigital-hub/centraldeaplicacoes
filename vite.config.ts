@@ -4,6 +4,8 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 import { VitePWA } from "vite-plugin-pwa";
 
+process.env.VITE_APP_VERSION = Date.now().toString(36).toUpperCase();
+
 export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
@@ -17,11 +19,14 @@ export default defineConfig(({ mode }) => ({
     mode === "development" && componentTagger(),
     VitePWA({
       registerType: "autoUpdate",
+      injectRegister: "auto",
       devOptions: {
         enabled: false,
       },
       includeAssets: ["icon-192.png", "icon-512.png"],
       workbox: {
+        clientsClaim: true,
+        skipWaiting: true,
         navigateFallbackDenylist: [/^\/~oauth/],
         globPatterns: ["**/*.{js,css,html,ico,png,svg,woff2}"],
       },
