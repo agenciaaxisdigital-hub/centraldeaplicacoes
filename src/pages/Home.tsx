@@ -14,6 +14,7 @@ import {
   Sparkles,
   Shield,
   Zap,
+  Download,
 } from "lucide-react";
 
 const PHOTO_URL =
@@ -147,19 +148,29 @@ function AppCard({ app, index }: { app: App; index: number }) {
           style={{ background: `radial-gradient(250px circle at 50% 20%, ${app.glowColor}18, transparent 60%)` }} />
 
         <div className="p-3 sm:p-4">
-          {/* Icon + badge */}
-          <div className="flex items-center justify-between mb-2 sm:mb-3">
+          {/* Icon + badges */}
+          <div className="flex items-start justify-between mb-2 sm:mb-3 gap-2">
             <motion.div
-              className={`flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br ${app.gradient} shadow-lg`}
+              className={`flex items-center justify-center shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br ${app.gradient} shadow-lg`}
               whileHover={{ rotate: [0, -10, 10, 0], scale: 1.15 }}
               transition={{ duration: 0.4 }}
             >
               <app.Icon size={16} strokeWidth={1.8} className="text-white sm:hidden" />
               <app.Icon size={18} strokeWidth={1.8} className="text-white hidden sm:block" />
             </motion.div>
-            <span className="text-[8px] sm:text-[9px] font-bold uppercase tracking-[0.1em] text-muted-foreground/50 bg-white/[0.04] border border-white/[0.06] px-1.5 sm:px-2 py-0.5 rounded-full">
-              {app.badge}
-            </span>
+
+            <div className="flex flex-col items-end gap-1.5 sm:gap-2">
+              <span className="text-[8px] sm:text-[9px] font-bold uppercase tracking-[0.1em] text-muted-foreground/50 bg-white/[0.04] border border-white/[0.06] px-1.5 sm:px-2 py-0.5 rounded-full whitespace-nowrap">
+                {app.badge}
+              </span>
+              
+              {app.id !== "site" && (
+                <span className="text-[8px] sm:text-[9px] font-bold uppercase tracking-[0.1em] text-primary bg-primary/10 border border-primary/20 px-1.5 sm:px-2 py-0.5 rounded-full backdrop-blur-md flex items-center gap-1 group-hover:bg-primary/20 group-hover:border-primary/40 group-hover:text-primary transition-all duration-300 whitespace-nowrap shadow-sm">
+                  <Download size={10} className="text-primary group-hover:animate-bounce" />
+                  Instalar App
+                </span>
+              )}
+            </div>
           </div>
 
           {/* Title */}

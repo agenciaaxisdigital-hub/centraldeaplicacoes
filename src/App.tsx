@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+﻿import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "./pages/Home";
@@ -15,7 +15,7 @@ const App = () => (
   <TooltipProvider>
     <GlobalOfflineSync />
     <InstallPWA />
-    <VersionMonitor />
+      <VersionMonitor />
     <Toaster />
     <BrowserRouter>
       <Routes>
@@ -28,3 +28,4 @@ const App = () => (
 );
 
 export default App;
+
